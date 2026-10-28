@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Charulatha Vetrivel, QA Automation Engineer specializing in Selenium, Java, API testing, and quality engineering." />
+  <title>Charulatha Vetrivel | QA Automation Engineer</title>
+  <style>
+    :root {
+      --navy: #14213d;
+      --blue: #3157d5;
+      --blue-soft: #eaf0ff;
+      --ink: #1d2738;
+      --muted: #647084;
+      --line: #e4e9f2;
+      --paper: #ffffff;
+      --bg: #f6f8fc;
+      --teal: #0f9d91;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink); background: var(--bg); line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--line);
+    }
+    nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { color: var(--navy); font-weight: 800; letter-spacing: -.4px; }
+    .brand span { color: var(--blue); }
+    .nav-links { display: flex; gap: 22px; align-items: center; font-size: .92rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--blue); }
+    .hero { padding: 88px 0 76px; background: radial-gradient(circle at 88% 12%, #dce6ff 0, transparent 30%), linear-gradient(135deg,#fff 0%,#f4f7ff 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.5fr .8fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--blue); background: var(--blue-soft); padding: 7px 13px; border-radius: 100px; font-weight: 700; font-size: .82rem; }
+    h1 { font-size: clamp(2.5rem, 5vw, 4.4rem); line-height: 1.08; letter-spacing: -2px; margin: 20px 0 15px; color: var(--navy); }
+    h1 span { color: var(--blue); }
+    .hero p { max-width: 680px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 27px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; padding: 12px 18px; border-radius: 10px; font-weight: 700; border: 1px solid transparent; transition: .2s; }
+    .btn-primary { background: var(--blue); color: white; box-shadow: 0 8px 20px #3157d52b; }
+    .btn-primary:hover { transform: translateY(-2px); background: #2548bd; }
+    .btn-secondary { background: white; border-color: var(--line); color: var(--navy); }
+    .btn-secondary:hover { border-color: var(--blue); }
+    .profile-card { background: white; border: 1px solid var(--line); border-radius: 22px; padding: 28px; box-shadow: 0 20px 55px #1a2b4a10; }
+    .avatar { width: 76px; height: 76px; border-radius: 22px; display: grid; place-items: center; color: white; font-size: 1.65rem; font-weight: 800; background: linear-gradient(135deg,var(--blue),#6e8aff); margin-bottom: 20px; }
+    .profile-card h2 { font-size: 1.2rem; margin: 0; color: var(--navy); }
+    .profile-card .role { color: var(--muted); font-size: .94rem; margin: 4px 0 20px; }
+    .mini-stat { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); font-size: .92rem; }
+    .mini-stat strong { color: var(--navy); }
+    section { padding: 76px 0; }
+    .section-head { margin-bottom: 30px; }
+    .section-kicker { color: var(--blue); font-size: .78rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+    h2.section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; color: var(--navy); letter-spacing: -.8px; margin: 7px 0 10px; }
+    .section-intro { color: var(--muted); max-width: 720px; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; }
+    .panel { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 26px; }
+    .panel p { margin-top: 0; color: var(--muted); }
+    .focus-list { display: grid; gap: 14px; }
+    .focus-item { display: flex; gap: 12px; align-items: flex-start; }
+    .check { flex: 0 0 27px; height: 27px; border-radius: 8px; background: #e6f8f5; color: var(--teal); display: grid; place-items: center; font-weight: 900; }
+    .focus-item strong { display: block; color: var(--navy); }
+    .focus-item small { color: var(--muted); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .skill-card { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+    .skill-card h3 { margin: 0 0 14px; font-size: 1.02rem; color: var(--navy); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: .83rem; padding: 6px 10px; background: #f1f4fa; color: #43516a; border-radius: 8px; }
+    .experience-card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+    .experience-top { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .experience-top h3 { margin: 0; font-size: 1.25rem; color: var(--navy); }
+    .company { color: var(--blue); font-weight: 700; }
+    .date { background: var(--blue-soft); color: var(--blue); border-radius: 8px; padding: 6px 10px; font-size: .84rem; font-weight: 700; height: fit-content; }
+    .experience-meta { color: var(--muted); font-size: .92rem; margin: 9px 0 20px; }
+    ul.clean { padding-left: 20px; margin-bottom: 0; }
+    ul.clean li { margin: 9px 0; color: #4d5a70; }
+    .project-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .project-card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 25px; display: flex; flex-direction: column; }
+    .project-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; background: var(--blue-soft); color: var(--blue); font-size: 1.2rem; margin-bottom: 17px; }
+    .project-card h3 { margin: 0 0 8px; color: var(--navy); }
+    .project-card p { margin: 0 0 18px; color: var(--muted); }
+    .project-card .tags { margin-top: auto; }
+    .impact { background: var(--navy); color: white; }
+    .impact .section-kicker { color: #9eb4ff; }
+    .impact h2.section-title { color: white; }
+    .impact .section-intro { color: #c1cbe0; }
+    .impact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 30px; }
+    .impact-item { border: 1px solid #ffffff25; background: #ffffff08; border-radius: 16px; padding: 23px; }
+    .impact-item strong { display: block; font-size: 1.8rem; color: #a9bcff; margin-bottom: 5px; }
+    .impact-item span { color: #d1d9eb; font-size: .93rem; }
+    .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .education-card { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+    .education-card h3 { margin: 0 0 6px; color: var(--navy); }
+    .education-card p { margin: 0; color: var(--muted); }
+    .contact-box { background: linear-gradient(135deg,#17294c,#263f77); border-radius: 24px; padding: 42px; color: white; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .contact-box h2 { font-size: clamp(1.8rem,3vw,2.5rem); line-height: 1.2; margin: 0 0 10px; }
+    .contact-box p { color: #d4def3; margin: 0; }
+    .contact-links { display: flex; flex-direction: column; gap: 10px; min-width: 245px; }
+    .contact-links a { background: #ffffff12; border: 1px solid #ffffff2b; padding: 11px 14px; border-radius: 9px; overflow-wrap: anywhere; }
+    .contact-links a:hover { background: #ffffff20; }
+    footer { padding: 25px 0; color: var(--muted); font-size: .87rem; text-align: center; }
+    @media (max-width: 800px) {
+      .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .skills-grid { grid-template-columns: repeat(2,1fr); }
+      .nav-links { gap: 12px; font-size: .82rem; }
+      .brand { font-size: .92rem; }
+      .contact-box { flex-direction: column; align-items: flex-start; padding: 30px; }
+      .contact-links { width: 100%; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1100px); }
+      .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+      .hero { padding: 58px 0; }
+      section { padding: 56px 0; }
+      .skills-grid, .project-grid, .impact-grid, .education-grid { grid-template-columns: 1fr; }
+      .profile-card, .panel, .experience-card { padding: 22px; }
+      h1 { letter-spacing: -1.2px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">CHARULATHA<span>.</span></a>
+      <div class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">● QA AUTOMATION ENGINEER</span>
+          <h1>Hi, I'm <span>Charulatha</span> Vetrivel.</h1>
+          <p>Associate Software Test Engineer with 3 years of experience in QA automation and functional testing. I help teams deliver reliable software through UI automation, API validation, backend testing, and thoughtful defect investigation.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">Explore my work&nbsp; ↗</a>
+            <a class="btn btn-secondary" href="mailto:charulatha200701@gmail.com">Contact me</a>
+          </div>
+        </div>
+        <aside class="profile-card">
+          <div class="avatar">CV</div>
+          <h2>Charulatha Vetrivel</h2>
+          <div class="role">QA Automation Engineer · Mphasis</div>
+          <div class="mini-stat"><span>Experience</span><strong>3 years</strong></div>
+          <div class="mini-stat"><span>Primary stack</span><strong>Java · Selenium</strong></div>
+          <div class="mini-stat"><span>Domain</span><strong>Financial Services</strong></div>
+          <div class="mini-stat"><span>Based in</span><strong>Bengaluru, India</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">About me</div>
+          <h2 class="section-title">Quality is built into every step.</h2>
+          <p class="section-intro">I combine automation engineering with hands-on functional testing to identify issues early, improve regression coverage, and support stable releases in Agile teams.</p>
+        </div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>At Mphasis, I work on the Schwab Stock Plan Services (SPS) project in the banking and financial services domain. My work includes developing and maintaining Selenium automation, validating APIs, checking backend data with SQL, and collaborating with developers to investigate defects.</p>
+            <p style="margin-bottom:0">I value maintainable test scripts, clear test artifacts, dependable execution, and practical root-cause analysis. I also have foundational knowledge of Python, JavaScript, and TypeScript.</p>
+          </div>
+          <div class="panel focus-list">
+            <div class="focus-item"><span class="check">✓</span><div><strong>UI automation</strong><small>Selenium WebDriver, Java, TestNG, Cucumber</small></div></div>
+            <div class="focus-item"><span class="check">✓</span><div><strong>API & backend validation</strong><small>Rest Assured, Postman, Swagger, SQL</small></div></div>
+            <div class="focus-item"><span class="check">✓</span><div><strong>Release confidence</strong><small>Regression, integration, UAT, end-to-end testing</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" style="background:#fff">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Technical toolkit</div>
+          <h2 class="section-title">Skills & technologies</h2>
+          <p class="section-intro">Tools and technologies used across automation, API testing, data validation, and team delivery.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card"><h3>Automation</h3><div class="tags"><span class="tag">Selenium WebDriver</span><span class="tag">TestNG</span><span class="tag">Cucumber</span><span class="tag">Maven</span></div></div>
+          <div class="skill-card"><h3>Programming</h3><div class="tags"><span class="tag">Java / Core Java</span><span class="tag">C#</span><span class="tag">SQL</span><span class="tag">Python · Basics</span><span class="tag">JavaScript · Basics</span><span class="tag">TypeScript · Basics</span></div></div>
+          <div class="skill-card"><h3>API testing</h3><div class="tags"><span class="tag">Rest Assured</span><span class="tag">Postman</span><span class="tag">Swagger</span><span class="tag">Bruno</span><span class="tag">Mabl</span></div></div>
+          <div class="skill-card"><h3>Testing types</h3><div class="tags"><span class="tag">Functional</span><span class="tag">Regression</span><span class="tag">System</span><span class="tag">Integration</span><span class="tag">UAT</span><span class="tag">Migration</span><span class="tag">Cross-browser</span></div></div>
+          <div class="skill-card"><h3>Database & delivery</h3><div class="tags"><span class="tag">MySQL</span><span class="tag">Oracle / Toad</span><span class="tag">Jenkins</span><span class="tag">Bamboo</span><span class="tag">GitHub</span><span class="tag">Bitbucket</span></div></div>
+          <div class="skill-card"><h3>Tools & collaboration</h3><div class="tags"><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Splunk</span><span class="tag">Eclipse</span><span class="tag">IntelliJ IDEA</span><span class="tag">Visual Studio 2022</span><span class="tag">WinSCP</span><span class="tag">PuTTY</span><span class="tag">Control-M</span><span class="tag">Polaris</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Career</div>
+          <h2 class="section-title">Professional experience</h2>
+          <p class="section-intro">Hands-on QA work across automation, functional validation, API testing, and release support.</p>
+        </div>
+        <article class="experience-card">
+          <div class="experience-top">
+            <div><h3>QA Automation Engineer</h3><div class="company">Mphasis Pvt. Ltd.</div></div>
+            <span class="date">Oct 2023 – Present</span>
+          </div>
+          <div class="experience-meta">Client: Charles Schwab – Stock Plan Services (SPS) · Banking & Financial Services · Bengaluru</div>
+          <ul class="clean">
+            <li>Designed, developed, and maintained Selenium WebDriver automation scripts using Java for web and desktop application testing.</li>
+            <li>Executed regression and end-to-end scenarios to validate application functionality and support release quality.</li>
+            <li>Performed API response validation using Rest Assured and manual API verification using Postman and Swagger.</li>
+            <li>Validated backend data integrity using SQL queries across MySQL-based record-keeping systems.</li>
+            <li>Performed functional, regression, system, integration, UAT, migration, release, and test-system testing in Agile environments.</li>
+            <li>Applied reliable locators, synchronization techniques, assertions, and cross-browser testing practices.</li>
+            <li>Investigated recurring defects, performed root-cause analysis, and contributed to improved release stability.</li>
+            <li>Used Jira for defect tracking and Confluence for project and environment documentation; collaborated with cross-functional teams during Agile ceremonies.</li>
+            <li>Supported framework enhancements, test optimization, and continuous improvement of QA processes.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" style="background:#fff">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Selected work</div>
+          <h2 class="section-title">Project highlights</h2>
+          <p class="section-intro">Representative areas of responsibility from my QA experience. Project descriptions are kept at a high level to respect client confidentiality.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-icon">▣</div>
+            <h3>Schwab Stock Plan Services — UI Automation</h3>
+            <p>Automated web and desktop application scenarios with Selenium WebDriver and Java, maintaining regression coverage and validating key user journeys for a financial-services platform.</p>
+            <div class="tags"><span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">TestNG</span><span class="tag">Regression</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-icon">⌁</div>
+            <h3>API & backend data validation</h3>
+            <p>Validated API responses and service behavior with Rest Assured, Postman, and Swagger, then cross-checked relevant records using SQL to support end-to-end confidence.</p>
+            <div class="tags"><span class="tag">Rest Assured</span><span class="tag">Postman</span><span class="tag">Swagger</span><span class="tag">SQL</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-icon">✓</div>
+            <h3>Release & regression quality</h3>
+            <p>Executed functional, integration, UAT, migration, and release testing; documented defects and partnered with development teams to investigate issues and improve stability.</p>
+            <div class="tags"><span class="tag">Agile</span><span class="tag">Jira</span><span class="tag">Defect analysis</span><span class="tag">UAT</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-icon">⚙</div>
+            <h3>Automation framework improvement</h3>
+            <p>Contributed to automation framework maintenance and enhancements, applying synchronization, assertions, and reusable scripting practices to improve test reliability.</p>
+            <div class="tags"><span class="tag">Maven</span><span class="tag">Cucumber</span><span class="tag">CI/CD</span><span class="tag">Test optimization</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact">
+      <div class="container">
+        <div class="section-kicker">Highlights</div>
+        <h2 class="section-title">Focused on dependable releases.</h2>
+        <p class="section-intro">A snapshot of my experience and professional recognition.</p>
+        <div class="impact-grid">
+          <div class="impact-item"><strong>3 years</strong><span>QA automation and functional testing experience</span></div>
+          <div class="impact-item"><strong>15%</strong><span>Reported reduction in defect leakage, as stated in my resume</span></div>
+          <div class="impact-item"><strong>3 awards</strong><span>Laurel Award, performance appreciation, and client recognition for delivery under tight deadlines</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Education & recognition</div>
+          <h2 class="section-title">Building skills through experience</h2>
+        </div>
+        <div class="education-grid">
+          <div class="education-card"><h3>Bachelor of Engineering</h3><p>Electronics and Communication Engineering</p><p>Anna University Regional Campus, Coimbatore</p><p>August 2018 – August 2022</p></div>
+          <div class="education-card"><h3>Recognition</h3><p>Laurel Award for growth and contributions; performance appreciation for reliability, dedication, and quality of work; client recognition for delivering under tight deadlines.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h2>Let's connect.</h2>
+            <p>Interested in QA Automation, Software Testing, and Quality Engineering opportunities.</p>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:charulatha200701@gmail.com">✉ &nbsp; charulatha200701@gmail.com</a>
+            <a href="tel:+918056649511">☎ &nbsp; +91 80566 49511</a>
+            <a href="#home">↑ &nbsp; Back to top</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">© <span id="year"></span> Charulatha Vetrivel · QA Automation Engineer</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
